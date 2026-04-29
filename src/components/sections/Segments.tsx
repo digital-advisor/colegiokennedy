@@ -1,0 +1,147 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { CheckCircle2 } from 'lucide-react';
+
+const segmentsData = [
+  {
+    id: 'infantil',
+    name: 'Educação Infantil',
+    age: '2 a 5 anos',
+    title: 'Onde a magia de aprender começa',
+    desc: 'Um ambiente seguro, estimulante e cheio de afeto, projetado para desenvolver as habilidades motoras, cognitivas e socioemocionais dos pequenos. No Infantil do Kennedy, brincar é coisa séria e aprender é uma aventura.',
+    features: ['Turmas reduzidas', 'Psicomotricidade', 'Iniciação Musical', 'Inglês lúdico', 'Parque e áreas de convivência'],
+    imgMain: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imgSub: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    badge: 'Infantil 1 ao 5'
+  },
+  {
+    id: 'fund1',
+    name: 'Ensino F. I',
+    age: '6 a 10 anos',
+    title: 'Construindo bases sólidas',
+    desc: 'Desenvolvemos a autonomia e o amor pelo aprendizado. Nossa abordagem interdisciplinar incentiva a curiosidade, a liderança e o pensamento crítico desde os primeiros anos acadêmicos.',
+    features: ['Projetos educacionais', 'Educação Financeira', 'Aulas de Robótica', 'Esportes inclusivos', 'Salas climatizadas e interativas'],
+    imgMain: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imgSub: 'https://images.unsplash.com/photo-1588725845946-b1cb8668aa15?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    badge: '1º ao 5º Ano'
+  },
+  {
+    id: 'fund2',
+    name: 'Ensino F. II',
+    age: '11 a 14 anos',
+    title: 'Preparação para grandes voos',
+    desc: 'Guiamos os adolescentes em suas descobertas com uma matriz curricular forte e atual. Focamos no desenvolvimento de habilidades socioemocionais essenciais para os desafios da vida.',
+    features: ['Corpo docente especialista', 'Laboratórios de Ciências', 'Empreendedorismo', 'Aprofundamento em Matemática e Português', 'Apoio psicopedagógico'],
+    imgMain: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imgSub: 'https://images.unsplash.com/photo-1522881113591-b661eb982ed3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    badge: '6º ao 9º Ano'
+  },
+  {
+    id: 'integral',
+    name: 'Tempo Integral',
+    age: 'Opcional',
+    title: 'A escola como extensão de casa',
+    desc: 'O Sistema de Tempo Integral do Kennedy oferece conforto, segurança e uma rotina equilibrada com almoço, descanso, acompanhamento de tarefas, esportes e atividades extracurriculares diferenciadas.',
+    features: ['Nutrição balanceada', 'Estudo Dirigido', 'Oficinas de Arte', 'Natação e Judô', 'Acolhimento contínuo'],
+    imgMain: 'https://images.unsplash.com/photo-1577416412292-747c6607f055?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imgSub: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    badge: 'Nova Estrutura!'
+  }
+];
+
+export default function Segments() {
+  const [activeSegment, setActiveSegment] = useState(segmentsData[0].id);
+
+  const activeData = segmentsData.find(s => s.id === activeSegment)!;
+
+  return (
+    <section id="ensino" className="py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="section-tag">Nossos Segmentos</span>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-kennedy-blue-dark mb-6 tracking-tight">Cada fase com o cuidado que merece</h2>
+          <p className="text-lg text-kennedy-gray-dark font-body">
+            Do Infantil ao Fundamental, acompanhamos cada etapa do desenvolvimento do seu filho com metodologia forte e acolhimento.
+          </p>
+        </div>
+
+        {/* Tabs */}
+        <div className="flex overflow-x-auto snap-x hide-scrollbar mb-12 gap-4 pb-4 justify-start lg:justify-center">
+          {segmentsData.map(segment => (
+            <button
+              key={segment.id}
+              onClick={() => setActiveSegment(segment.id)}
+              className={`snap-center shrink-0 px-6 py-3 rounded-full font-bold text-lg transition-all duration-300 border-2 
+                ${activeSegment === segment.id 
+                  ? 'bg-kennedy-blue-dark text-white border-kennedy-blue-dark shadow-md' 
+                  : 'bg-white text-kennedy-gray-dark border-kennedy-gray-light hover:border-kennedy-blue-light hover:text-kennedy-blue-primary'}`}
+            >
+              {segment.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Content */}
+        <div className="relative min-h-[500px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeSegment}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            >
+              {/* Text Info */}
+              <div>
+                <span className="inline-block px-4 py-1.5 bg-kennedy-gold-light text-kennedy-gold-dark font-bold rounded-full text-sm mb-6">
+                  {activeData.age}
+                </span>
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-kennedy-blue-dark mb-4">
+                  {activeData.title}
+                </h3>
+                <p className="text-lg text-kennedy-gray-dark mb-8 leading-relaxed">
+                  {activeData.desc}
+                </p>
+                <ul className="space-y-4 mb-10">
+                  {activeData.features.map((feature, i) => (
+                    <li key={i} className="flex items-center text-kennedy-blue-dark font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-kennedy-success mr-3 shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#matricula" className="inline-flex items-center text-lg font-bold text-kennedy-blue-primary hover:text-kennedy-gold-dark group">
+                  Quero conhecer a estrutura <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                </a>
+              </div>
+
+              {/* Visuals */}
+              <div className="relative">
+                {/* Decorative blob backdrop */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[120%] bg-kennedy-blue-pale rounded-[100px] -rotate-6 z-0"></div>
+                
+                <div className="relative z-10 w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border-8 border-white">
+                  <img src={activeData.imgMain} alt={activeData.name} className="w-full h-full object-cover" />
+                </div>
+                
+                {/* Sub image (polaroid style) */}
+                <div className="absolute -bottom-8 -left-8 md:-bottom-12 md:-left-12 w-48 md:w-64 aspect-square rounded-2xl overflow-hidden shadow-2xl border-8 border-white bg-white z-20 -rotate-6 transition-transform hover:rotate-0 hover:scale-105 duration-300">
+                  <img src={activeData.imgSub} alt="Detalhe do segmento" className="w-full h-full object-cover" />
+                  <div className="absolute bottom-2 left-0 right-0 text-center font-accent italic text-xs font-bold text-kennedy-blue-dark bg-white/80 py-1">
+                    {activeData.name}
+                  </div>
+                </div>
+
+                {/* Floating Badge */}
+                <div className="absolute top-8 -right-4 md:-right-8 bg-kennedy-gold text-kennedy-blue-dark px-6 py-3 rounded-full font-bold shadow-lg z-30 animate-bounce" style={{ animationDuration: '3s' }}>
+                  {activeData.badge}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
+}

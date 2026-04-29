@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-kennedy-blue-dark: #0A2472;
+  --color-kennedy-blue-primary: #0D47A1;
+  --color-kennedy-blue-medium: #1565C0;
+  --color-kennedy-blue-light: #42A5F5;
+  --color-kennedy-blue-sky: #90CAF9;
+  --color-kennedy-blue-pale: #E3F2FD;
+
+  --color-kennedy-gold: #F9A825;
+  --color-kennedy-gold-dark: #F57F17;
+  --color-kennedy-gold-light: #FFF8E1;
+
+  --color-kennedy-white: #FFFFFF;
+  --color-kennedy-off-white: #FAFBFE;
+  --color-kennedy-gray-light: #F5F7FA;
+  --color-kennedy-gray-medium: #B0BEC5;
+  --color-kennedy-gray-dark: #37474F;
+  --color-kennedy-black: #1A1A2E;
+
+  --color-kennedy-success: #2E7D32;
+  --color-kennedy-whatsapp: #25D366;
+  --color-kennedy-warning: #FF8F00;
+  --color-kennedy-danger: #C62828;
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --font-accent: 'Playfair Display', serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-shimmer: shimmer 2s infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes shimmer {
+    100% { transform: translateX(100%); }
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-gradient-to-r from-kennedy-gold to-kennedy-gold-dark text-kennedy-blue-dark font-bold text-lg px-8 py-4 rounded-full shadow-[0_0_20px_rgba(249,168,37,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(249,168,37,0.5)] hover:-translate-y-1;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center border-2 border-white text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:bg-white hover:text-kennedy-blue-dark;
+  }
+  .btn-whatsapp-large {
+    @apply inline-flex flex-col items-center justify-center bg-kennedy-whatsapp text-white font-bold text-xl px-10 py-5 rounded-3xl shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(37,211,102,0.6)];
+  }
+  .section-tag {
+    @apply inline-block bg-kennedy-blue-pale text-kennedy-blue-primary font-semibold tracking-wider text-sm uppercase px-4 py-1.5 rounded-full mb-4;
+  }
+  .hero-title {
+    @apply text-white font-heading font-black leading-tight tracking-tight text-[clamp(2.5rem,5vw,5rem)] mb-6;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

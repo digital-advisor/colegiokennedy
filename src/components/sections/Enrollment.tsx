@@ -1,0 +1,141 @@
+import React from 'react';
+import { Target, CheckCircle, Calendar, MessageSquare, ShieldCheck } from 'lucide-react';
+import { motion } from 'motion/react';
+
+export default function Enrollment() {
+  return (
+    <section id="matricula" className="py-24 relative overflow-hidden bg-kennedy-blue-dark">
+      {/* Background Decor */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-kennedy-blue-primary rounded-full blur-[100px] opacity-50"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-kennedy-blue-primary/40 to-transparent"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left: Info & CTAs */}
+          <div className="text-white">
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center space-x-2 bg-kennedy-danger px-4 py-2 rounded-full mb-6 relative overflow-hidden"
+            >
+              <Target className="w-5 h-5 text-white animate-pulse" />
+              <span className="font-bold text-sm tracking-wide">Vagas Limitadas para 2026</span>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] animate-shimmer"></div>
+            </motion.div>
+
+            <h2 className="text-4xl md:text-5xl font-heading font-black mb-6 leading-tight">
+              Matricule seu filho no Kennedy
+            </h2>
+            <p className="text-xl text-white/80 mb-10 font-body leading-relaxed max-w-lg">
+              Faça parte de uma escola que há 70 anos transforma vidas com educação de excelência, acolhimento e inovação.
+            </p>
+
+            <div className="space-y-4 mb-12">
+              {[
+                "Condições especiais de matrícula antecipada",
+                "Desconto progressivo para irmãos",
+                "Material didático integrado",
+                "Tour guiado para conhecer a estrutura"
+              ].map((benefit, index) => (
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  key={index} 
+                  className="flex items-center text-lg font-medium text-white/90"
+                >
+                  <CheckCircle className="w-6 h-6 text-kennedy-gold mr-3 shrink-0" />
+                  {benefit}
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#" className="btn-whatsapp-large flex-1">
+                <span className="flex items-center mb-1">
+                  <MessageSquare className="w-6 h-6 mr-2" />
+                  Fale com nossa equipe
+                </span>
+                <span className="text-xs font-normal opacity-80 uppercase tracking-widest">Resposta Imediata</span>
+              </a>
+              <a href="#" className="btn-outline border-white/30 text-white hover:bg-white hover:text-kennedy-blue-dark flex-1 flex-col !py-5 rounded-3xl">
+                <span className="flex items-center mb-1 font-bold">
+                  <Calendar className="w-6 h-6 mr-2" />
+                  Agende sua Visita
+                </span>
+                <span className="text-xs font-normal opacity-80 uppercase tracking-widest">Conheça Pessoalmente</span>
+              </a>
+            </div>
+            
+            <p className="mt-6 text-center sm:text-left text-white/60 font-semibold">
+              Ou ligue: <a href="tel:+558532624069" className="text-kennedy-gold hover:underline">(85) 3262-4069</a>
+            </p>
+          </div>
+
+          {/* Right: Form Form */}
+          <motion.div 
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.6 }}
+             className="relative"
+          >
+            <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10">
+              <h3 className="text-2xl font-heading font-black text-kennedy-blue-dark mb-2 text-center">Pré-matrícula 2026</h3>
+              <p className="text-kennedy-gray-dark text-center mb-8 text-sm">Preencha o formulário abaixo e nossa equipe entrará em contato com as melhores condições.</p>
+              
+              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <div>
+                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Nome do Responsável</label>
+                  <input type="text" placeholder="Como devemos chamar você?" className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">WhatsApp</label>
+                  <input type="tel" placeholder="(85) 90000-0000" className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Nome do Aluno(a)</label>
+                  <input type="text" placeholder="Nome da criança" className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Segmento de Interesse</label>
+                  <select className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50 appearance-none text-kennedy-gray-dark">
+                    <option value="" disabled selected>Selecione um segmento</option>
+                    <option value="infantil">Educação Infantil</option>
+                    <option value="fund1">Ensino Fundamental I (1º ao 5º)</option>
+                    <option value="fund2">Ensino Fundamental II (6º ao 9º)</option>
+                  </select>
+                </div>
+                <button type="submit" className="w-full btn-primary !rounded-2xl !py-5 mt-4">
+                  Enviar Solicitação
+                </button>
+              </form>
+
+              <div className="mt-6 flex items-center justify-center text-xs text-kennedy-gray-dark">
+                <ShieldCheck className="w-4 h-4 text-kennedy-success mr-1" />
+                Seus dados estão seguros conosco.
+              </div>
+            </div>
+
+            {/* Social Proof Badge attached to the form */}
+            <div className="absolute -bottom-6 -left-6 md:-left-12 bg-white rounded-2xl p-4 shadow-xl flex items-center space-x-3 z-20 border border-kennedy-gray-light">
+              <div className="flex -space-x-3">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Avatar"/>
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Avatar"/>
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-kennedy-blue-light text-white font-bold text-xs flex items-center justify-center">+150</div>
+              </div>
+              <p className="text-xs font-bold text-kennedy-blue-dark leading-tight max-w-[120px]">
+                Famílias já garantiram vaga em 2026
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
