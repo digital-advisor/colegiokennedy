@@ -49,10 +49,7 @@ export default function ValueProposition() {
                     {pillar.icon}
                   </div>
                   <h3 className="text-xl font-heading font-bold text-kennedy-blue-dark mb-3">{pillar.title}</h3>
-                  <p className="text-kennedy-gray-dark mb-6 leading-relaxed">"{pillar.desc}"</p>
-                  <a href="#" className="inline-flex flex-row items-center font-bold text-kennedy-blue-primary group-hover:text-kennedy-gold-dark transition-colors">
-                    Saiba mais <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                  </a>
+                  <p className="text-kennedy-gray-dark leading-relaxed">"{pillar.desc}"</p>
                 </div>
               </motion.div>
             ))}

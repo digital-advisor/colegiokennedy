@@ -8,11 +8,15 @@ const segmentsData = [
     name: 'Educação Infantil',
     age: '2 a 5 anos',
     title: 'Onde a magia de aprender começa',
-    desc: 'Um ambiente seguro, estimulante e cheio de afeto, projetado para desenvolver as habilidades motoras, cognitivas e socioemocionais dos pequenos. No Infantil do Kennedy, brincar é coisa séria e aprender é uma aventura.',
-    features: ['Turmas reduzidas', 'Psicomotricidade', 'Iniciação Musical', 'Inglês lúdico', 'Parque e áreas de convivência'],
-    imgMain: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imgSub: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-    badge: 'Infantil 1 ao 5'
+    desc: 'Um ambiente seguro, estimulante e cheio de afeto, projetado para desenvolver as habilidades motoras, cognitivas e socioemocionais dos pequenos. No Infantil do Kennedy, utilizamos o renomado Sistema de Ensino Ari de Sá (SAS), onde brincar é coisa séria e aprender é uma aventura.',
+    features: ['Turmas reduzidas', 'Psicomotricidade', 'Iniciação Musical', 'Parque e áreas de convivência'],
+    imgMain: 'https://drive.google.com/thumbnail?id=1bbCyQUM9oq6i1lz_KUzQmJyOA3l0WS4G&sz=w1000',
+    imgSub: 'https://drive.google.com/thumbnail?id=1CsKCu6LRCoYpety8IG3s4Wf8DoIoQE3O&sz=w600',
+    badge: 'Infantil 1 ao 5',
+    hasPartnerLogo: true,
+    partnerLogo: 'https://drive.google.com/thumbnail?id=1Mz8j-aAw7SYkyfmmdUsWXwqxO0--an-Z&sz=w300',
+    partnerTitle: 'Parceiro Sistema SAS',
+    partnerDesc: 'Utilizamos os materiais integrados e a metodologia de excelência do Sistema de Ensino Ari de Sá (SAS).'
   },
   {
     id: 'fund1',
@@ -20,10 +24,14 @@ const segmentsData = [
     age: '6 a 10 anos',
     title: 'Construindo bases sólidas',
     desc: 'Desenvolvemos a autonomia e o amor pelo aprendizado. Nossa abordagem interdisciplinar incentiva a curiosidade, a liderança e o pensamento crítico desde os primeiros anos acadêmicos.',
-    features: ['Projetos educacionais', 'Educação Financeira', 'Aulas de Robótica', 'Esportes inclusivos', 'Salas climatizadas e interativas'],
-    imgMain: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    features: ['Projetos e eventos', 'Esportes inclusivos', 'Salas climatizadas e interativas'],
+    imgMain: 'https://drive.google.com/thumbnail?id=1Sa-lkyJE5ccRjQYi5hDTsc5cw40uJcBB&sz=w1000',
     imgSub: 'https://images.unsplash.com/photo-1588725845946-b1cb8668aa15?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-    badge: '1º ao 5º Ano'
+    badge: '1º ao 5º Ano',
+    hasPartnerLogo: false,
+    partnerLogo: '',
+    partnerTitle: '',
+    partnerDesc: ''
   },
   {
     id: 'fund2',
@@ -31,10 +39,14 @@ const segmentsData = [
     age: '11 a 14 anos',
     title: 'Preparação para grandes voos',
     desc: 'Guiamos os adolescentes em suas descobertas com uma matriz curricular forte e atual. Focamos no desenvolvimento de habilidades socioemocionais essenciais para os desafios da vida.',
-    features: ['Corpo docente especialista', 'Laboratórios de Ciências', 'Empreendedorismo', 'Aprofundamento em Matemática e Português', 'Apoio psicopedagógico'],
-    imgMain: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imgSub: 'https://images.unsplash.com/photo-1522881113591-b661eb982ed3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-    badge: '6º ao 9º Ano'
+    features: ['Corpo docente especialista', 'Empreendedorismo', 'Apoio psicopedagógico'],
+    imgMain: 'https://drive.google.com/thumbnail?id=1xfFXv7EsxlT0nCXGRwi1Uqkl6TycnGFY&sz=w1000',
+    imgSub: 'https://drive.google.com/thumbnail?id=1I2K8PpLawI1bf26gUdV0WPBPqOFsIAu4&sz=w600',
+    badge: '6º ao 9º Ano',
+    hasPartnerLogo: true,
+    partnerLogo: 'https://drive.google.com/thumbnail?id=1WUhCgA0kgikk3U7Bt83cFso5d1-DYQZd&sz=w300',
+    partnerTitle: 'Parceiro Sistema Farias Brito',
+    partnerDesc: 'Utilizamos os materiais integrados e a metodologia de excelência do Sistema Farias Brito de Ensino.'
   },
   {
     id: 'integral',
@@ -45,7 +57,11 @@ const segmentsData = [
     features: ['Nutrição balanceada', 'Estudo Dirigido', 'Oficinas de Arte', 'Natação e Judô', 'Acolhimento contínuo'],
     imgMain: 'https://images.unsplash.com/photo-1577416412292-747c6607f055?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     imgSub: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-    badge: 'Nova Estrutura!'
+    badge: 'Nova Estrutura!',
+    hasPartnerLogo: false,
+    partnerLogo: '',
+    partnerTitle: '',
+    partnerDesc: ''
   }
 ];
 
@@ -103,7 +119,7 @@ export default function Segments() {
                 <p className="text-lg text-kennedy-gray-dark mb-8 leading-relaxed">
                   {activeData.desc}
                 </p>
-                <ul className="space-y-4 mb-10">
+                <ul className="space-y-4 mb-8">
                   {activeData.features.map((feature, i) => (
                     <li key={i} className="flex items-center text-kennedy-blue-dark font-medium">
                       <CheckCircle2 className="w-5 h-5 text-kennedy-success mr-3 shrink-0" />
@@ -111,9 +127,21 @@ export default function Segments() {
                     </li>
                   ))}
                 </ul>
-                <a href="#matricula" className="inline-flex items-center text-lg font-bold text-kennedy-blue-primary hover:text-kennedy-gold-dark group">
-                  Quero conhecer a estrutura <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                </a>
+
+                {activeData.hasPartnerLogo && (
+                  <div className="mt-6 flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 max-w-md">
+                    <img 
+                      src={activeData.partnerLogo} 
+                      alt={activeData.partnerTitle} 
+                      referrerPolicy="no-referrer"
+                      className="h-12 w-auto object-contain shrink-0"
+                    />
+                    <div className="text-xs text-kennedy-gray-dark leading-normal">
+                      <p className="font-bold text-kennedy-blue-dark text-sm">{activeData.partnerTitle}</p>
+                      <p>{activeData.partnerDesc}</p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Visuals */}
@@ -122,12 +150,12 @@ export default function Segments() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[120%] bg-kennedy-blue-pale rounded-[100px] -rotate-6 z-0"></div>
                 
                 <div className="relative z-10 w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border-8 border-white">
-                  <img src={activeData.imgMain} alt={activeData.name} className="w-full h-full object-cover" />
+                  <img src={activeData.imgMain} alt={activeData.name} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
                 </div>
                 
                 {/* Sub image (polaroid style) */}
                 <div className="absolute -bottom-8 -left-8 md:-bottom-12 md:-left-12 w-48 md:w-64 aspect-square rounded-2xl overflow-hidden shadow-2xl border-8 border-white bg-white z-20 -rotate-6 transition-transform hover:rotate-0 hover:scale-105 duration-300">
-                  <img src={activeData.imgSub} alt="Detalhe do segmento" className="w-full h-full object-cover" />
+                  <img src={activeData.imgSub} alt="Detalhe do segmento" referrerPolicy="no-referrer" className="w-full h-full object-cover" />
                   <div className="absolute bottom-2 left-0 right-0 text-center font-accent italic text-xs font-bold text-kennedy-blue-dark bg-white/80 py-1">
                     {activeData.name}
                   </div>

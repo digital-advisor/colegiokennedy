@@ -70,9 +70,6 @@ export default function Differentials() {
                 </div>
                 <h3 className="text-xl font-heading font-bold text-kennedy-blue-dark mb-3 group-hover:text-kennedy-blue-primary transition-colors">{diff.title}</h3>
                 <p className="text-kennedy-gray-dark leading-relaxed group-hover:text-kennedy-blue-dark/80">{diff.desc}</p>
-                <div className="mt-6 flex items-center text-sm font-bold text-kennedy-blue-primary opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  <span>Ler mais</span> <span className="ml-1">→</span>
-                </div>
               </div>
             </motion.div>
           ))}

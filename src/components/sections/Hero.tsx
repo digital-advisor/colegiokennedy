@@ -8,8 +8,9 @@ export default function Hero() {
       {/* Background with Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          src="https://drive.google.com/thumbnail?id=1lHB1oJM0R9_RsrTmNTv5oMs_0BVj1dp9&sz=w2000" 
           alt="Crianças sorrindo na escola" 
+          referrerPolicy="no-referrer"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-kennedy-blue-dark/90 via-kennedy-blue-primary/70 to-kennedy-blue-light/30 mix-blend-multiply"></div>
