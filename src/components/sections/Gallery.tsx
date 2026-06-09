@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Instagram } from 'lucide-react';
 
-const categories = ['Todos', 'Eventos', 'Dia a Dia', 'Datas Comemorativas', 'Esportes'];
+const categories = ['Todos', 'Eventos', 'Dia a Dia', 'Projetos', 'Datas Comemorativas', 'Esportes'];
 
 const galleryPhotos = [
   { id: 1, category: 'Eventos', img: 'https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Festa da Família', date: 'Maio 2026' },
@@ -11,6 +11,8 @@ const galleryPhotos = [
   { id: 4, category: 'Datas Comemorativas', img: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Carnaval', date: 'Fevereiro 2026' },
   { id: 5, category: 'Dia a Dia', img: 'https://images.unsplash.com/photo-1588725845946-b1cb8668aa15?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Hora do Recreio', date: 'Abril 2026' },
   { id: 6, category: 'Eventos', img: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Feira Cultural', date: 'Novembro 2025' },
+  { id: 7, category: 'Projetos', img: 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Projeto Empreendedorismo', date: 'Junho 2026' },
+  { id: 8, category: 'Projetos', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Iniciação Científica', date: 'Maio 2026' },
 ];
 
 export default function Gallery() {

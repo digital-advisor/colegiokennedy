@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, Instagram, PlayCircle } from 'lucide-react';
+import { Star, Instagram, PlayCircle, X } from 'lucide-react';
 
 const testimonials = [
   {
@@ -22,6 +22,7 @@ const testimonials = [
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -56,10 +57,14 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <div className="relative w-full max-w-md aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 group cursor-pointer group">
+            <div 
+              onClick={() => setIsVideoOpen(true)}
+              className="relative w-full max-w-md aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 group cursor-pointer"
+            >
               <img 
-                src="https://images.unsplash.com/photo-1544281679-44efad6631b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Depoimento Mãe Eloa" 
+                src="https://drive.google.com/thumbnail?id=1OtvY4d81azV-skBnUlqKOCy_j9mSsu4X&sz=w1000" 
+                alt="Depoimento da Família" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-kennedy-blue-dark via-transparent to-transparent opacity-90"></div>
@@ -83,9 +88,9 @@ export default function Testimonials() {
                 <p className="text-white/90 text-sm font-accent italic">
                   "Sou apaixonada pelo ensino, metodologia e profissionais que compõem essa escola do coração!"
                 </p>
-                <div className="mt-4 flex items-center space-x-1text-white/60 text-xs uppercase tracking-wider">
+                <div className="mt-4 flex items-center space-x-1 text-white/60 text-xs uppercase tracking-wider">
                   <Instagram className="w-4 h-4 mr-1 text-white/60" />
-                  <span className="text-white/60">Via Instagram</span>
+                  <span className="text-white/60">Assista ao vídeo</span>
                 </div>
               </div>
             </div>
@@ -160,6 +165,44 @@ export default function Testimonials() {
           </motion.div>
         </div>
       </div>
+
+      {/* Video Modal Overlay */}
+      <AnimatePresence>
+        {isVideoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+            onClick={() => setIsVideoOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 250 }}
+              className="relative w-full max-w-sm aspect-[9/16] max-h-[90vh] bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setIsVideoOpen(false)}
+                className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+                aria-label="Fechar vídeo"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              
+              <iframe
+                src="https://drive.google.com/file/d/1fDxKTV0IREC2acVBxiBvXAbOOShYWWu_/preview"
+                title="Depoimento Família Kennedy"
+                className="w-full h-full border-0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

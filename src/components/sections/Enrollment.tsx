@@ -1,8 +1,32 @@
-import React from 'react';
-import { Target, CheckCircle, Calendar, MessageSquare, ShieldCheck } from 'lucide-react';
+import React, { useState } from 'react';
+import { Target, CheckCircle, ShieldCheck } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Enrollment() {
+  const [responsavel, setResponsavel] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [aluno, setAluno] = useState('');
+  const [serie, setSerie] = useState('');
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!responsavel || !whatsapp || !aluno || !serie) {
+      return;
+    }
+    const formattedMessage = `Olá! Gostaria de mais informações sobre as matrículas 2026.
+
+*Nome do Responsável:* ${responsavel}
+*WhatsApp:* ${whatsapp}
+*Nome do Aluno(a):* ${aluno}
+*Série desejada:* ${serie}`;
+
+    const encodedText = encodeURIComponent(formattedMessage);
+    const whatsappUrl = `https://wa.me/558596505001?text=${encodedText}`;
+    
+    // Redirect to WhatsApp
+    window.location.href = whatsappUrl;
+  };
+
   return (
     <section id="matricula" className="py-24 relative overflow-hidden bg-kennedy-blue-dark">
       {/* Background Decor */}
@@ -31,7 +55,7 @@ export default function Enrollment() {
               Matricule seu filho no Kennedy
             </h2>
             <p className="text-xl text-white/80 mb-10 font-body leading-relaxed max-w-lg">
-              Faça parte de uma escola que há 70 anos transforma vidas com educação de excelência, acolhimento e inovação.
+              Faça parte de uma school que há 70 anos transforma vidas com educação de excelência, acolhimento e inovação.
             </p>
 
             <div className="space-y-4 mb-12">
@@ -55,25 +79,8 @@ export default function Enrollment() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#" className="btn-whatsapp-large flex-1">
-                <span className="flex items-center mb-1">
-                  <MessageSquare className="w-6 h-6 mr-2" />
-                  Fale com nossa equipe
-                </span>
-                <span className="text-xs font-normal opacity-80 uppercase tracking-widest">Resposta Imediata</span>
-              </a>
-              <a href="#" className="btn-outline border-white/30 text-white hover:bg-white hover:text-kennedy-blue-dark flex-1 flex-col !py-5 rounded-3xl">
-                <span className="flex items-center mb-1 font-bold">
-                  <Calendar className="w-6 h-6 mr-2" />
-                  Agende sua Visita
-                </span>
-                <span className="text-xs font-normal opacity-80 uppercase tracking-widest">Conheça Pessoalmente</span>
-              </a>
-            </div>
-            
-            <p className="mt-6 text-center sm:text-left text-white/60 font-semibold">
-              Ou ligue: <a href="tel:+558532624069" className="text-kennedy-gold hover:underline">(85) 3262-4069</a>
+            <p className="text-center sm:text-left text-white/80 font-semibold text-lg mt-4">
+              Fale conosco por telefone: <a href="tel:+558532624069" className="text-kennedy-gold hover:underline font-bold">(85) 3262-4069</a>
             </p>
           </div>
 
@@ -89,26 +96,53 @@ export default function Enrollment() {
               <h3 className="text-2xl font-heading font-black text-kennedy-blue-dark mb-2 text-center">Pré-matrícula 2026</h3>
               <p className="text-kennedy-gray-dark text-center mb-8 text-sm">Preencha o formulário abaixo e nossa equipe entrará em contato com as melhores condições.</p>
               
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
-                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Nome do Responsável</label>
-                  <input type="text" placeholder="Como devemos chamar você?" className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" />
+                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Nome do Responsável *</label>
+                  <input 
+                    type="text" 
+                    required
+                    value={responsavel}
+                    onChange={(e) => setResponsavel(e.target.value)}
+                    placeholder="Como devemos chamar você?" 
+                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">WhatsApp</label>
-                  <input type="tel" placeholder="(85) 90000-0000" className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" />
+                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">WhatsApp *</label>
+                  <input 
+                    type="tel" 
+                    required
+                    value={whatsapp}
+                    onChange={(e) => setWhatsapp(e.target.value)}
+                    placeholder="(85) 90000-0000" 
+                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Nome do Aluno(a)</label>
-                  <input type="text" placeholder="Nome da criança" className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" />
+                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Nome do Aluno(a) *</label>
+                  <input 
+                    type="text" 
+                    required
+                    value={aluno}
+                    onChange={(e) => setAluno(e.target.value)}
+                    placeholder="Nome da criança" 
+                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Segmento de Interesse</label>
-                  <select className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50 appearance-none text-kennedy-gray-dark">
-                    <option value="" disabled selected>Selecione um segmento</option>
-                    <option value="infantil">Educação Infantil</option>
-                    <option value="fund1">Ensino Fundamental I (1º ao 5º)</option>
-                    <option value="fund2">Ensino Fundamental II (6º ao 9º)</option>
+                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Série desejada *</label>
+                  <select 
+                    required
+                    value={serie}
+                    onChange={(e) => setSerie(e.target.value)}
+                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50 appearance-none text-kennedy-gray-dark"
+                  >
+                    <option value="" disabled>Selecione a série desejada</option>
+                    <option value="Educação Infantil">Educação Infantil</option>
+                    <option value="1º ao 5º Ano (Ensino Fundamental I)">1º ao 5º Ano (Ensino Fundamental I)</option>
+                    <option value="6º ao 9º Ano (Ensino Fundamental II)">6º ao 9º Ano (Ensino Fundamental II)</option>
+                    <option value="Tempo Integral">Tempo Integral</option>
                   </select>
                 </div>
                 <button type="submit" className="w-full btn-primary !rounded-2xl !py-5 mt-4">

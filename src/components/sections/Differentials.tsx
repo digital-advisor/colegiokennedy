@@ -40,7 +40,7 @@ export default function Differentials() {
     <section className="py-24 bg-kennedy-gray-light">
       <div className="container mx-auto px-4 sm:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-kennedy-blue-dark mb-6 tracking-tight">Diferenciais que fazem a diferença</h2>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-kennedy-blue-dark mb-6 tracking-tight">Por que escolher o Kennedy</h2>
           <p className="text-lg text-kennedy-gray-dark font-body">
             Cada detalhe da nossa estrutura e metodologia foi pensado para garantir o desenvolvimento completo e a felicidade do seu filho.
           </p>

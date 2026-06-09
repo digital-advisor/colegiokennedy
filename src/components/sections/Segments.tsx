@@ -16,7 +16,9 @@ const segmentsData = [
     hasPartnerLogo: true,
     partnerLogo: 'https://drive.google.com/thumbnail?id=1Mz8j-aAw7SYkyfmmdUsWXwqxO0--an-Z&sz=w300',
     partnerTitle: 'Parceiro Sistema SAS',
-    partnerDesc: 'Utilizamos os materiais integrados e a metodologia de excelência do Sistema de Ensino Ari de Sá (SAS).'
+    partnerDesc: 'Utilizamos os materiais integrados e a metodologia de excelência do Sistema de Ensino Ari de Sá (SAS).',
+    hasHighlightLink: false,
+    highlightLinkLabel: ''
   },
   {
     id: 'fund1',
@@ -31,7 +33,9 @@ const segmentsData = [
     hasPartnerLogo: false,
     partnerLogo: '',
     partnerTitle: '',
-    partnerDesc: ''
+    partnerDesc: '',
+    hasHighlightLink: true,
+    highlightLinkLabel: 'Conheça nossos projetos >'
   },
   {
     id: 'fund2',
@@ -46,7 +50,9 @@ const segmentsData = [
     hasPartnerLogo: true,
     partnerLogo: 'https://drive.google.com/thumbnail?id=1WUhCgA0kgikk3U7Bt83cFso5d1-DYQZd&sz=w300',
     partnerTitle: 'Parceiro Sistema Farias Brito',
-    partnerDesc: 'Utilizamos os materiais integrados e a metodologia de excelência do Sistema Farias Brito de Ensino.'
+    partnerDesc: 'Utilizamos os materiais integrados e a metodologia de excelência do Sistema Farias Brito de Ensino.',
+    hasHighlightLink: false,
+    highlightLinkLabel: ''
   },
   {
     id: 'integral',
@@ -54,14 +60,16 @@ const segmentsData = [
     age: 'Opcional',
     title: 'A escola como extensão de casa',
     desc: 'O Sistema de Tempo Integral do Kennedy oferece conforto, segurança e uma rotina equilibrada com almoço, descanso, acompanhamento de tarefas, esportes e atividades extracurriculares diferenciadas.',
-    features: ['Nutrição balanceada', 'Estudo Dirigido', 'Oficinas de Arte', 'Natação e Judô', 'Acolhimento contínuo'],
+    features: ['Nutrição balanceada', 'Estudo Dirigido', 'Oficinas de Arte', 'Tempo livre para aproveitar seus filhos em casa', 'Acolhimento contínuo'],
     imgMain: 'https://images.unsplash.com/photo-1577416412292-747c6607f055?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     imgSub: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
     badge: 'Nova Estrutura!',
     hasPartnerLogo: false,
     partnerLogo: '',
     partnerTitle: '',
-    partnerDesc: ''
+    partnerDesc: '',
+    hasHighlightLink: true,
+    highlightLinkLabel: 'Conheça nossa Rotina >'
   }
 ];
 
@@ -128,13 +136,24 @@ export default function Segments() {
                   ))}
                 </ul>
 
+                {activeData.hasHighlightLink && (
+                  <div className="mt-6 mb-8">
+                    <a 
+                      href="#matricula" 
+                      className="inline-flex items-center gap-1 text-kennedy-blue-primary font-heading font-extrabold text-lg hover:text-kennedy-gold-dark transition-colors group"
+                    >
+                      <span>{activeData.highlightLinkLabel}</span>
+                    </a>
+                  </div>
+                )}
+
                 {activeData.hasPartnerLogo && (
                   <div className="mt-6 flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 max-w-md">
                     <img 
                       src={activeData.partnerLogo} 
                       alt={activeData.partnerTitle} 
                       referrerPolicy="no-referrer"
-                      className="h-12 w-auto object-contain shrink-0"
+                      className="h-[72px] w-auto object-contain shrink-0"
                     />
                     <div className="text-xs text-kennedy-gray-dark leading-normal">
                       <p className="font-bold text-kennedy-blue-dark text-sm">{activeData.partnerTitle}</p>
