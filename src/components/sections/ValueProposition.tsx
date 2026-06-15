@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Heart, BookOpen, Star, PlayCircle } from 'lucide-react';
+import { Heart, BookOpen, Star } from 'lucide-react';
 
 export default function ValueProposition() {
   const pillars = [
@@ -63,16 +63,13 @@ export default function ValueProposition() {
             className="lg:col-span-1 relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
           >
             <img 
-              src="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src="https://drive.google.com/thumbnail?id=1ksX2bupW7XjmTp5TE5sHU0THZqYv4GCp&sz=w1000" 
               alt="Diretor do colégio" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-kennedy-blue-dark/40 group-hover:bg-kennedy-blue-dark/50 transition-colors"></div>
             
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-              <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <PlayCircle className="w-12 h-12 text-white" />
-              </div>
               <p className="text-white text-center font-accent text-xl md:text-2xl italic font-medium drop-shadow-md">
                 "Limites não são barreiras, são caminhos seguros para o crescimento."
               </p>

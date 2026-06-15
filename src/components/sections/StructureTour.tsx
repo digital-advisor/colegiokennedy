@@ -22,10 +22,10 @@ export default function StructureTour() {
             viewport={{ once: true }}
             className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden group border border-kennedy-gray-light cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
           >
-            <img src="https://images.unsplash.com/photo-1588072432924-f7737e584f27?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Pátio principal" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="https://drive.google.com/thumbnail?id=1t6Is923Av-VhNyYNq4XUDphbbCjOFeUE&sz=w1000" alt="Pátio principal" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-kennedy-blue-dark/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
             <div className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <h3 className="text-2xl font-heading font-bold text-white mb-2">Pátio e Área de Recreação</h3>
+              <h3 className="text-2xl font-heading font-bold text-white mb-2">Quadra Poliesportiva</h3>
               <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Espaço amplo e seguro para o convívio e brincadeiras diárias.</p>
             </div>
           </motion.div>
@@ -38,7 +38,7 @@ export default function StructureTour() {
             transition={{ delay: 0.1 }}
             className="md:col-span-1 md:row-span-1 relative rounded-3xl overflow-hidden group border border-kennedy-gray-light cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
           >
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Salas de Aula" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <img src="https://drive.google.com/thumbnail?id=1xfFXv7EsxlT0nCXGRwi1Uqkl6TycnGFY&sz=w1000" alt="Salas de Aula" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-gradient-to-t from-kennedy-blue-dark/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
             <div className="absolute bottom-6 left-6">
               <h3 className="text-lg font-heading font-bold text-white">Salas Climatizadas</h3>
@@ -53,10 +53,10 @@ export default function StructureTour() {
             transition={{ delay: 0.2 }}
             className="md:col-span-1 md:row-span-1 relative rounded-3xl overflow-hidden group border border-kennedy-gray-light cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
           >
-            <img src="https://images.unsplash.com/photo-1568225575519-58cbce13386f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Biblioteca" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <img src="https://drive.google.com/thumbnail?id=1rq-CdZM8fAKMr2TjEeCql44II4b0pEaf&sz=w1000" alt="Biblioteca" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-gradient-to-t from-kennedy-blue-dark/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
             <div className="absolute bottom-6 left-6">
-              <h3 className="text-lg font-heading font-bold text-white">Biblioteca</h3>
+              <h3 className="text-lg font-heading font-bold text-white">Área de Recreação</h3>
             </div>
           </motion.div>
 
@@ -68,10 +68,10 @@ export default function StructureTour() {
              transition={{ delay: 0.3 }}
             className="md:col-span-2 md:row-span-1 relative rounded-3xl overflow-hidden group border border-kennedy-gray-light cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
           >
-            <img src="https://images.unsplash.com/photo-1541534401786-207ea390899b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Quadra Poliesportiva" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="https://drive.google.com/thumbnail?id=1dQHiKwD3xE3Ex5RcmXmsGKaJSu-MMyZs&sz=w1000" alt="Quadra Poliesportiva" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-kennedy-blue-dark/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
             <div className="absolute bottom-6 left-6">
-              <h3 className="text-xl font-heading font-bold text-white mb-1">Quadra Poliesportiva</h3>
+              <h3 className="text-xl font-heading font-bold text-white mb-1">Área de Recreação</h3>
               <p className="text-white/80 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">Estrutura completa para atividades físicas e esportes coletivos.</p>
             </div>
           </motion.div>

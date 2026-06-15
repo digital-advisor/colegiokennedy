@@ -68,7 +68,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-kennedy-gold mr-3 mt-0.5 shrink-0" />
-                <span className="text-white/70 text-sm leading-relaxed">Av. Pontes Vieira, XXXX<br/>Bairro - Fortaleza, CE<br/>CEP: 60000-000</span>
+                <span className="text-white/70 text-sm leading-relaxed">Av. Engenheiro Santana Junior, 58<br/>Bairro Papicu - Fortaleza, CE<br/>CEP: 60175-551</span>
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 text-kennedy-gold mr-3 shrink-0" />
@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Clock className="w-5 h-5 text-kennedy-gold mr-3 shrink-0" />
-                <span className="text-white/70 text-sm">Seg-Sex | 07h às 18h</span>
+                <span className="text-white/70 text-sm">Seg-Sex | 07h às 17h</span>
               </li>
             </ul>
           </div>
