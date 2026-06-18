@@ -148,16 +148,16 @@ export default function Segments() {
                 )}
 
                 {activeData.hasPartnerLogo && (
-                  <div className="mt-6 flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 max-w-md">
+                  <div className={`mt-6 flex items-center gap-5 bg-slate-50 rounded-2xl border border-slate-100 transition-all ${activeData.id === 'fund2' ? 'max-w-lg p-5 shadow-sm' : 'max-w-md p-4'}`}>
                     <img 
                       src={activeData.partnerLogo} 
                       alt={activeData.partnerTitle} 
                       referrerPolicy="no-referrer"
-                      className="h-[72px] w-auto object-contain shrink-0"
+                      className={`${activeData.id === 'fund2' ? 'h-[108px]' : 'h-[72px]'} w-auto object-contain shrink-0 transition-all`}
                     />
                     <div className="text-xs text-kennedy-gray-dark leading-normal">
-                      <p className="font-bold text-kennedy-blue-dark text-sm">{activeData.partnerTitle}</p>
-                      <p>{activeData.partnerDesc}</p>
+                      <p className={`font-bold text-kennedy-blue-dark ${activeData.id === 'fund2' ? 'text-base mb-1' : 'text-sm'}`}>{activeData.partnerTitle}</p>
+                      <p className={activeData.id === 'fund2' ? 'text-sm' : ''}>{activeData.partnerDesc}</p>
                     </div>
                   </div>
                 )}
