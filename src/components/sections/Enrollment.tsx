@@ -13,7 +13,7 @@ export default function Enrollment() {
     if (!responsavel || !whatsapp || !aluno || !serie) {
       return;
     }
-    const formattedMessage = `Olá! Gostaria de mais informações sobre as matrículas 2026.
+    const formattedMessage = `Olá! Gostaria de mais informações sobre as matrículas 2027.
 
 *Nome do Responsável:* ${responsavel}
 *WhatsApp:* ${whatsapp}
@@ -47,7 +47,7 @@ export default function Enrollment() {
               className="inline-flex items-center space-x-2 bg-kennedy-danger px-4 py-2 rounded-full mb-6 relative overflow-hidden"
             >
               <Target className="w-5 h-5 text-white animate-pulse" />
-              <span className="font-bold text-sm tracking-wide">Vagas Limitadas para 2026</span>
+              <span className="font-bold text-sm tracking-wide">Vagas Limitadas para 2027</span>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] animate-shimmer"></div>
             </motion.div>
 
@@ -93,7 +93,7 @@ export default function Enrollment() {
              className="relative"
           >
             <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10">
-              <h3 className="text-2xl font-heading font-black text-kennedy-blue-dark mb-2 text-center">Pré-matrícula 2026</h3>
+              <h3 className="text-2xl font-heading font-black text-kennedy-blue-dark mb-2 text-center">Pré-matrícula 2027</h3>
               <p className="text-kennedy-gray-dark text-center mb-8 text-sm">Preencha o formulário abaixo e nossa equipe entrará em contato com as melhores condições.</p>
               
               <form className="space-y-5" onSubmit={handleSubmit}>
@@ -159,12 +159,12 @@ export default function Enrollment() {
             {/* Social Proof Badge attached to the form */}
             <div className="absolute -bottom-6 -left-6 md:-left-12 bg-white rounded-2xl p-4 shadow-xl flex items-center space-x-3 z-20 border border-kennedy-gray-light">
               <div className="flex -space-x-3">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Avatar"/>
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Avatar"/>
+                <img src="https://drive.google.com/thumbnail?id=1F42BCxUrB3Q7nqr2EfB_bVYui6Svk_E_&sz=w200" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Avatar"/>
+                <img src="https://drive.google.com/thumbnail?id=1wvhkLSO9y8HzsFXcR8S45LorCJeWD85A&sz=w200" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Avatar"/>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-kennedy-blue-light text-white font-bold text-xs flex items-center justify-center">+150</div>
               </div>
               <p className="text-xs font-bold text-kennedy-blue-dark leading-tight max-w-[120px]">
-                Famílias já garantiram vaga em 2026
+                Famílias já garantiram vaga em 2027
               </p>
             </div>
           </motion.div>

@@ -1,22 +1,55 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Instagram } from 'lucide-react';
+import { Instagram, FolderOpen, ExternalLink, X } from 'lucide-react';
 
-const categories = ['Todos', 'Eventos', 'Dia a Dia', 'Projetos', 'Datas Comemorativas', 'Esportes'];
+const categories = ['Todos', 'Eventos', 'Dia a Dia', 'Projetos'];
 
 const galleryPhotos = [
-  { id: 1, category: 'Eventos', img: 'https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Festa da Família', date: 'Maio 2026' },
-  { id: 2, category: 'Dia a Dia', img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Aula de Ciências', date: 'Abril 2026' },
-  { id: 3, category: 'Esportes', img: 'https://images.unsplash.com/photo-1546519638-3236ddb483c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Jogos Internos', date: 'Março 2026' },
-  { id: 4, category: 'Datas Comemorativas', img: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Carnaval', date: 'Fevereiro 2026' },
-  { id: 5, category: 'Dia a Dia', img: 'https://images.unsplash.com/photo-1588725845946-b1cb8668aa15?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Hora do Recreio', date: 'Abril 2026' },
-  { id: 6, category: 'Eventos', img: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Feira Cultural', date: 'Novembro 2025' },
-  { id: 7, category: 'Projetos', img: 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Projeto Empreendedorismo', date: 'Junho 2026' },
-  { id: 8, category: 'Projetos', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', title: 'Iniciação Científica', date: 'Maio 2026' },
+  { id: 2, category: 'Dia a Dia', img: 'https://drive.google.com/thumbnail?id=1xVpJfdx_-acJG0sCkVFI9IFcnNMm01Re&sz=w1000', title: 'Interação e Aprendizado', date: 'Dia a Dia' },
+  { id: 5, category: 'Dia a Dia', img: 'https://drive.google.com/thumbnail?id=1pN-kqubOWR9RJnR3lLWVmmOw72r3Af_y&sz=w1000', title: 'Atividades Artísticas', date: 'Dia a Dia' },
+  { id: 9, category: 'Dia a Dia', img: 'https://drive.google.com/thumbnail?id=1j0qUkiZyX-VwKTiHsw1yT81pb6g6KT3G&sz=w1000', title: 'Desenvolvimento Psicomotor', date: 'Dia a Dia' },
+  { id: 10, category: 'Dia a Dia', img: 'https://drive.google.com/thumbnail?id=1ru8CjqJgAJ6pS2aKViKKRbnBMc7NiL_Y&sz=w1000', title: 'Exploração e Descobertas', date: 'Dia a Dia' },
+  { id: 11, category: 'Dia a Dia', img: 'https://drive.google.com/thumbnail?id=1Gv94E2233cScu5Ab3Iak7MFpM4Mav16m&sz=w1000', title: 'Trabalho em Grupo', date: 'Dia a Dia' },
+  { id: 12, category: 'Dia a Dia', img: 'https://drive.google.com/thumbnail?id=1QBQoOgbBev8nq1fw7yF46bUICDafgyXv&sz=w1000', title: 'Orientação e Afeto', date: 'Dia a Dia' },
+  { id: 13, category: 'Dia a Dia', img: 'https://drive.google.com/thumbnail?id=106oIKk2QIxj9eqOjIPD1Ou6iGBjtdCKQ&sz=w1000', title: 'Socialização no Pátio', date: 'Dia a Dia' },
+  { id: 14, category: 'Dia a Dia', img: 'https://drive.google.com/thumbnail?id=1a5V0zxEskcuYd3l3qbNw9YCRzLswEf61&sz=w1000', title: 'Momentos Felizes', date: 'Dia a Dia' },
 ];
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('Todos');
+  const [modalCategory, setModalCategory] = useState<string | null>(null);
+
+  const driveLinks: Record<string, { title: string; url?: string; desc: string; comingSoon?: boolean }[]> = {
+    'Eventos': [
+      {
+        title: 'Festa Junina Kennedy 2026',
+        desc: 'Veja as fotos, danças e momentos inesquecíveis da nossa linda festa.',
+        comingSoon: true
+      },
+      {
+        title: 'Dia das Mães - Kennedy',
+        url: 'https://drive.google.com/drive/folders/12TULEgesDKF-WNbUSla9ZYGnMX5BUT2L?usp=sharing',
+        desc: 'Álbum repleto de sorrisos e celebração de carinho com nossas famílias.'
+      }
+    ],
+    'Projetos': [
+      {
+        title: 'Projeto Empreendedorismo',
+        url: 'https://drive.google.com/drive/folders/12TULEgesDKF-WNbUSla9ZYGnMX5BUT2L?usp=sharing',
+        desc: 'A criatividade financeira e as iniciativas criativas criadas pelas turmas.'
+      },
+      {
+        title: 'Iniciação Científica & Robótica',
+        url: 'https://drive.google.com/drive/folders/12TULEgesDKF-WNbUSla9ZYGnMX5BUT2L?usp=sharing',
+        desc: 'Os experimentos, protótipos e descobertas científicas dos estudantes.'
+      },
+      {
+        title: 'Atividades Maker e Projetos Especiais',
+        url: 'https://drive.google.com/drive/folders/12TULEgesDKF-WNbUSla9ZYGnMX5BUT2L?usp=sharing',
+        desc: 'Mão na massa e ideias inovadoras colocadas em prática no laboratório.'
+      }
+    ]
+  };
 
   const filteredPhotos = activeCategory === 'Todos' 
     ? galleryPhotos 
@@ -37,9 +70,15 @@ export default function Gallery() {
           {categories.map((cat, i) => (
             <button
               key={i}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => {
+                if (cat === 'Eventos' || cat === 'Projetos') {
+                  setModalCategory(cat);
+                } else {
+                  setActiveCategory(cat);
+                }
+              }}
               className={`px-5 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
-                activeCategory === cat 
+                activeCategory === cat || (modalCategory === cat)
                   ? 'bg-kennedy-blue-dark text-white shadow-md' 
                   : 'bg-kennedy-gray-light text-kennedy-gray-dark hover:bg-kennedy-blue-pale hover:text-kennedy-blue-primary'
               }`}
@@ -74,6 +113,111 @@ export default function Gallery() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Modal Popup for Eventos / Projetos */}
+        <AnimatePresence>
+          {modalCategory && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setModalCategory(null)}
+                className="absolute inset-0 bg-kennedy-blue-dark/60 backdrop-blur-sm"
+              />
+              
+              {/* Content Container */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ type: 'spring', duration: 0.5 }}
+                className="relative bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl border border-kennedy-gray-light z-10 overflow-hidden"
+              >
+                <button 
+                  onClick={() => setModalCategory(null)}
+                  className="absolute top-4 right-4 text-kennedy-gray-dark hover:text-kennedy-blue-dark transition-colors p-2 rounded-full hover:bg-kennedy-gray-light"
+                  aria-label="Fechar"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+
+                <div className="flex items-center gap-3 mb-4">
+                  <FolderOpen className="w-8 h-8 text-kennedy-blue-primary shrink-0" />
+                  <h3 className="text-2xl font-heading font-bold text-kennedy-blue-dark">
+                    Pastas de {modalCategory}
+                  </h3>
+                </div>
+
+                <p className="text-sm text-kennedy-gray-dark mb-6">
+                  Selecione uma das opções abaixo para ser direcionado aos registros de {modalCategory} no Google Drive oficial do Kennedy:
+                </p>
+
+                 <div className="space-y-4">
+                  {driveLinks[modalCategory]?.map((link, idx) => {
+                    if (link.comingSoon) {
+                      return (
+                        <div
+                          key={idx}
+                          className="flex items-start justify-between p-4 rounded-xl bg-kennedy-gray-light/60 border border-transparent transition-all text-left relative"
+                        >
+                          <div className="flex-grow pr-4">
+                            <div className="flex items-center gap-2 mb-1 flex-wrap">
+                              <h4 className="font-bold text-kennedy-blue-dark/75 text-base">
+                                {link.title}
+                              </h4>
+                              <span className="inline-block bg-amber-100 text-amber-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                                Em breve
+                              </span>
+                            </div>
+                            <p className="text-xs text-kennedy-gray-dark/70 leading-relaxed">
+                              {link.desc}
+                            </p>
+                          </div>
+                          <div className="bg-white/40 p-2 rounded-xl text-kennedy-gray-dark/30 shadow-sm shrink-0">
+                            <ExternalLink className="w-4 h-4" />
+                          </div>
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <a
+                        key={idx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start justify-between p-4 rounded-xl bg-kennedy-gray-light hover:bg-kennedy-blue-pale/50 border border-transparent hover:border-kennedy-blue-light/30 transition-all group text-left"
+                      >
+                        <div className="flex-grow pr-4">
+                          <h4 className="font-bold text-kennedy-blue-dark group-hover:text-kennedy-blue-primary transition-colors mb-1 text-base">
+                            {link.title}
+                          </h4>
+                          <p className="text-xs text-kennedy-gray-dark leading-relaxed">
+                            {link.desc}
+                          </p>
+                        </div>
+                        <div className="bg-white p-2 rounded-xl text-kennedy-blue-primary group-hover:bg-kennedy-blue-primary group-hover:text-white shadow-sm transition-all shrink-0">
+                          <ExternalLink className="w-4 h-4" />
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-kennedy-gray-light flex justify-end">
+                  <button
+                    onClick={() => setModalCategory(null)}
+                    className="px-6 py-2.5 rounded-full bg-kennedy-blue-dark text-white font-bold text-sm hover:bg-kennedy-blue-primary transition-all shadow-md"
+                  >
+                    Fechar Janela
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
 
         {/* Instagram Feed Section */}
         <div className="bg-kennedy-blue-pale/50 rounded-3xl p-8 md:p-12 text-center border border-kennedy-blue-light/20">

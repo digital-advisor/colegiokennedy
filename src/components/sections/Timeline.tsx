@@ -40,7 +40,7 @@ export default function Timeline() {
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section className="py-24 bg-kennedy-blue-dark relative overflow-hidden" ref={containerRef}>
+    <section id="historia" className="py-24 bg-kennedy-blue-dark relative overflow-hidden" ref={containerRef}>
       {/* Decorative background circle */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-kennedy-blue-primary/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
       

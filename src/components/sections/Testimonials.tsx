@@ -158,7 +158,12 @@ export default function Testimonials() {
             </div>
             
             <div className="pt-4 text-center lg:text-left">
-               <a href="#matricula" className="btn-primary w-full sm:w-auto shadow-[0_0_20px_rgba(249,168,37,0.2)]">
+               <a 
+                 href="https://calendar.app.google/xgsHGme9DoV1DZ2L6" 
+                 target="_blank" 
+                 rel="noreferrer" 
+                 className="btn-primary w-full sm:w-auto shadow-[0_0_20px_rgba(249,168,37,0.2)] inline-block text-center"
+               >
                   Venha conhecer pessoalmente. Agende sua visita! →
                </a>
             </div>

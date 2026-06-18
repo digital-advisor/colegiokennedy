@@ -26,15 +26,28 @@ export default function Footer() {
               Há 70 anos formando as bases de cidadãos completos, autônomos e preparados para o mundo moderno.
             </p>
             <div className="flex space-x-3 pt-2">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-kennedy-gold hover:text-kennedy-blue-dark transition-colors">
+              <a 
+                href="https://www.instagram.com/colegiokennedyoficial" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-kennedy-gold hover:text-kennedy-blue-dark transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-kennedy-gold hover:text-kennedy-blue-dark transition-colors">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61590472688265" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-kennedy-gold hover:text-kennedy-blue-dark transition-colors"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-kennedy-gold hover:text-kennedy-blue-dark transition-colors">
+              <div 
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/50 cursor-default"
+                title="YouTube"
+              >
                 <Youtube className="w-5 h-5" />
-              </a>
+              </div>
             </div>
           </div>
 
@@ -42,11 +55,9 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-bold text-white text-lg mb-6 border-b border-white/10 pb-2 inline-block">Institucional</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Nossa História</a></li>
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Estrutura e Tour Virtual</a></li>
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Equipe Pedagógica</a></li>
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Blog e Dicas Educacionais</a></li>
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Trabalhe Conosco</a></li>
+              <li><a href="#historia" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Nossa História</a></li>
+              <li><a href="#tour-virtual" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Estrutura e Tour Virtual</a></li>
+              <li><a href="mailto:kennedycoordenacao@gmail.com" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Trabalhe Conosco</a></li>
             </ul>
           </div>
 
@@ -54,11 +65,29 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-bold text-white text-lg mb-6 border-b border-white/10 pb-2 inline-block">Para Famílias</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Portal do Aluno / App</a></li>
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Calendário Escolar</a></li>
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Avisos e Comunicados</a></li>
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Dúvidas Frequentes (FAQ)</a></li>
-              <li><a href="#" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Setor Financeiro</a></li>
+              <li><a href="#familias" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Portal do Aluno / App</a></li>
+              <li><a href="#familias" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Calendário Escolar</a></li>
+              <li>
+                <a 
+                  href="https://chat.whatsapp.com/Ehl4vOZC7joIycS7bHpdmq" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-white/70 hover:text-kennedy-gold transition-colors text-sm"
+                >
+                  Comunidade de Avisos
+                </a>
+              </li>
+              <li><a href="#faq" className="text-white/70 hover:text-kennedy-gold transition-colors text-sm">Dúvidas Frequentes (FAQ)</a></li>
+              <li>
+                <a 
+                  href="https://api.whatsapp.com/send/?phone=558586679136&text&type=phone_number&app_absent=0" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-white/70 hover:text-kennedy-gold transition-colors text-sm"
+                >
+                  Secretaria
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -62,7 +62,12 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.7 }}
             className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
           >
-            <a href="#matricula" className="btn-primary group">
+            <a 
+              href="https://calendar.app.google/xgsHGme9DoV1DZ2L6" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn-primary group inline-flex items-center"
+            >
               <Calendar className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
               Agende sua Visita
             </a>

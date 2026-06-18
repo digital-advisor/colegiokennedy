@@ -68,7 +68,7 @@ export default function FloatingElements() {
             </AnimatePresence>
 
             <a 
-              href="https://wa.me/558532624069?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20matrículas%20no%20Colégio%20Kennedy." 
+              href="https://wa.me/message/26HLQ3X4G2EJG1" 
               target="_blank" 
               rel="noopener noreferrer"
               className="relative group block"

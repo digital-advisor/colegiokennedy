@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export default function StructureTour() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section id="tour-virtual" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="section-tag">Tour Virtual</span>
@@ -78,7 +78,12 @@ export default function StructureTour() {
         </div>
 
         <div className="mt-12 text-center">
-          <a href="#matricula" className="btn-outline border-kennedy-blue-primary text-kennedy-blue-primary hover:bg-kennedy-blue-primary hover:text-white">
+          <a 
+            href="https://calendar.app.google/xgsHGme9DoV1DZ2L6" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="btn-outline border-kennedy-blue-primary text-kennedy-blue-primary hover:bg-kennedy-blue-primary hover:text-white inline-block"
+          >
             Agendar visita presencial →
           </a>
         </div>

@@ -66,7 +66,12 @@ export default function Header() {
           <a href="#" className={`font-semibold hover:text-kennedy-gold transition-colors ${isScrolled ? 'text-kennedy-blue-primary' : 'text-white'}`}>
             Área do Aluno
           </a>
-          <a href="#matricula" className="btn-primary py-2.5 px-6 text-sm">
+          <a 
+            href="https://wa.me/message/26HLQ3X4G2EJG1" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="btn-primary py-2.5 px-6 text-sm"
+          >
             Matricule-se
           </a>
         </div>
@@ -99,7 +104,14 @@ export default function Header() {
               
               <div className="mt-8 flex flex-col items-center space-y-4 w-full px-8">
                 <a href="#" className="w-full text-center py-3 text-white border border-white/30 rounded-full font-semibold">Área do Aluno</a>
-                <a href="#matricula" className="w-full text-center py-3 bg-kennedy-gold text-kennedy-blue-dark rounded-full font-bold">Matricule-se</a>
+                <a 
+                  href="https://wa.me/message/26HLQ3X4G2EJG1" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="w-full text-center py-3 bg-kennedy-gold text-kennedy-blue-dark rounded-full font-bold"
+                >
+                  Matricule-se
+                </a>
               </div>
             </div>
           </motion.div>
