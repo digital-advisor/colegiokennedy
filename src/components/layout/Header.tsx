@@ -29,9 +29,9 @@ export default function Header() {
           </a>
         </div>
         <div className="flex items-center space-x-4">
-          <a href="#" className="hover:text-kennedy-gold transition-colors"><Instagram size={16} /></a>
-          <a href="#" className="hover:text-kennedy-gold transition-colors"><Facebook size={16} /></a>
-          <a href="#" className="hover:text-kennedy-gold transition-colors"><Youtube size={16} /></a>
+          <a href="https://www.instagram.com/colegiokennedyoficial" target="_blank" rel="noopener noreferrer" className="hover:text-kennedy-gold transition-colors"><Instagram size={16} /></a>
+          <a href="https://www.facebook.com/profile.php?id=61590472688265" target="_blank" rel="noopener noreferrer" className="hover:text-kennedy-gold transition-colors"><Facebook size={16} /></a>
+          <div className="text-white/50 cursor-default" title="YouTube"><Youtube size={16} /></div>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ export default function Header() {
           <NavLink href="#kennedy" isScrolled={isScrolled}>O Kennedy</NavLink>
           <NavLink href="#ensino" isScrolled={isScrolled}>Ensino</NavLink>
           <NavLink href="#familias" isScrolled={isScrolled}>Para Famílias</NavLink>
-          <NavLink href="#contato" isScrolled={isScrolled}>Contato</NavLink>
+          <NavLink href="#localizacao" isScrolled={isScrolled}>Localização</NavLink>
         </div>
 
         {/* Desktop CTA */}
@@ -67,9 +67,9 @@ export default function Header() {
             Área do Aluno
           </a>
           <a 
-            href="https://wa.me/message/26HLQ3X4G2EJG1" 
+            href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vi%20o%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%20e%20vagas." 
             target="_blank" 
-            rel="noreferrer" 
+            rel="noopener noreferrer" 
             className="btn-primary py-2.5 px-6 text-sm"
           >
             Matricule-se
@@ -100,14 +100,14 @@ export default function Header() {
               <MobileNavLink href="#kennedy" onClick={() => setIsMobileMenuOpen(false)}>O Kennedy</MobileNavLink>
               <MobileNavLink href="#ensino" onClick={() => setIsMobileMenuOpen(false)}>Ensino</MobileNavLink>
               <MobileNavLink href="#familias" onClick={() => setIsMobileMenuOpen(false)}>Para Famílias</MobileNavLink>
-              <MobileNavLink href="#contato" onClick={() => setIsMobileMenuOpen(false)}>Contato</MobileNavLink>
+              <MobileNavLink href="#localizacao" onClick={() => setIsMobileMenuOpen(false)}>Localização</MobileNavLink>
               
               <div className="mt-8 flex flex-col items-center space-y-4 w-full px-8">
                 <a href="#" className="w-full text-center py-3 text-white border border-white/30 rounded-full font-semibold">Área do Aluno</a>
                 <a 
-                  href="https://wa.me/message/26HLQ3X4G2EJG1" 
+                  href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vi%20o%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%20e%20vagas." 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
                   className="w-full text-center py-3 bg-kennedy-gold text-kennedy-blue-dark rounded-full font-bold"
                 >
                   Matricule-se

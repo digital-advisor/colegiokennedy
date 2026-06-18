@@ -16,9 +16,14 @@ export default function Footer() {
           
           {/* Brand Col */}
           <div className="space-y-6">
-            <span className="font-heading font-black text-3xl tracking-tighter text-white">
-              COLÉGIO <span className="text-kennedy-gold">Kennedy</span>
-            </span>
+            <div className="h-16 w-64 max-w-full">
+              <img 
+                src="https://drive.google.com/thumbnail?id=1CZDiDYxR_YDN5i_o6MrtCNPOShfXUeri&sz=w1000" 
+                alt="Colégio Kennedy" 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-contain object-left"
+              />
+            </div>
             <p className="text-white/80 font-accent italic text-lg leading-snug">
               "Educação que Transforma"
             </p>

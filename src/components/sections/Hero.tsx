@@ -71,9 +71,9 @@ export default function Hero() {
               <Calendar className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
               Agende sua Visita
             </a>
-            <a href="#contato" className="btn-outline group">
+            <a href="#matricula" className="btn-outline group">
               <MessageSquare className="mr-2 w-5 h-5 group-hover:-rotate-12 transition-transform" />
-              Fale Conosco
+              Fazer Matrícula
             </a>
           </motion.div>
         </div>

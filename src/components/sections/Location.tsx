@@ -3,7 +3,7 @@ import { MapPin, Navigation, Clock } from 'lucide-react';
 
 export default function Location() {
   return (
-    <section id="contato" className="py-24 bg-white">
+    <section id="localizacao" className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
