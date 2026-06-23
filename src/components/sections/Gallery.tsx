@@ -28,25 +28,15 @@ export default function Gallery() {
       },
       {
         title: 'Dia das Mães - Kennedy',
-        url: 'https://drive.google.com/drive/folders/12TULEgesDKF-WNbUSla9ZYGnMX5BUT2L?usp=sharing',
+        url: 'https://drive.google.com/drive/folders/1hQi_e607Q9afXJTmJoYT_t7aOJW2VSqc?usp=drive_link',
         desc: 'Álbum repleto de sorrisos e celebração de carinho com nossas famílias.'
       }
     ],
     'Projetos': [
       {
-        title: 'Projeto Empreendedorismo',
-        url: 'https://drive.google.com/drive/folders/12TULEgesDKF-WNbUSla9ZYGnMX5BUT2L?usp=sharing',
-        desc: 'A criatividade financeira e as iniciativas criativas criadas pelas turmas.'
-      },
-      {
-        title: 'Iniciação Científica & Robótica',
-        url: 'https://drive.google.com/drive/folders/12TULEgesDKF-WNbUSla9ZYGnMX5BUT2L?usp=sharing',
-        desc: 'Os experimentos, protótipos e descobertas científicas dos estudantes.'
-      },
-      {
-        title: 'Atividades Maker e Projetos Especiais',
-        url: 'https://drive.google.com/drive/folders/12TULEgesDKF-WNbUSla9ZYGnMX5BUT2L?usp=sharing',
-        desc: 'Mão na massa e ideias inovadoras colocadas em prática no laboratório.'
+        title: 'Projeto EXTRAC',
+        url: 'https://drive.google.com/drive/folders/1MwLLQtwpB2uegeTSgRhaWGHvl-0mLrnd?usp=sharing',
+        desc: 'Confira os registros, atividades e vivências especiais do projeto EXTRAC.'
       }
     ]
   };
