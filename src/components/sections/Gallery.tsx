@@ -35,7 +35,7 @@ export default function Gallery() {
     'Projetos': [
       {
         title: 'Projeto EXTRAC',
-        url: 'https://drive.google.com/drive/folders/1MwLLQtwpB2uegeTSgRhaWGHvl-0mLrnd?usp=sharing',
+        url: 'https://drive.google.com/drive/folders/1fwjyjxVWARX7AnODzpTlBtRVnk9NwJQt?usp=drive_link',
         desc: 'Confira os registros, atividades e vivências especiais do projeto EXTRAC.'
       }
     ]
