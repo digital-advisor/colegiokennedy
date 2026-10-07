@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { useScheduleModal } from '../../context/ScheduleModalContext';
 
 export default function StructureTour() {
+  const { openScheduleModal } = useScheduleModal();
+
   return (
     <section id="tour-virtual" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-8">
@@ -78,14 +81,12 @@ export default function StructureTour() {
         </div>
 
         <div className="mt-12 text-center">
-          <a 
-            href="https://calendar.app.google/xgsHGme9DoV1DZ2L6" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="btn-outline border-kennedy-blue-primary text-kennedy-blue-primary hover:bg-kennedy-blue-primary hover:text-white inline-block"
+          <button 
+            onClick={openScheduleModal}
+            className="btn-outline border-kennedy-blue-primary text-kennedy-blue-primary hover:bg-kennedy-blue-primary hover:text-white inline-block cursor-pointer"
           >
             Agendar visita presencial →
-          </a>
+          </button>
         </div>
       </div>
     </section>

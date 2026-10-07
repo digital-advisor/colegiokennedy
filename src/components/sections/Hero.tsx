@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Calendar, MessageSquare } from 'lucide-react';
+import { useScheduleModal } from '../../context/ScheduleModalContext';
 
 export default function Hero() {
+  const { openScheduleModal } = useScheduleModal();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-kennedy-blue-dark">
       {/* Background with Gradient Overlay */}
@@ -62,15 +65,13 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.7 }}
             className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
           >
-            <a 
-              href="https://calendar.app.google/xgsHGme9DoV1DZ2L6" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="btn-primary group inline-flex items-center"
+            <button 
+              onClick={openScheduleModal}
+              className="btn-primary group inline-flex items-center cursor-pointer"
             >
               <Calendar className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
               Agende sua Visita
-            </a>
+            </button>
             <a 
               href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vim%20do%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%20e%20vagas." 
               target="_blank" 

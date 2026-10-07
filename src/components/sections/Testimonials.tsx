@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, Instagram, PlayCircle, X } from 'lucide-react';
+import { useScheduleModal } from '../../context/ScheduleModalContext';
 
 const testimonials = [
   {
@@ -23,6 +24,7 @@ const testimonials = [
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const { openScheduleModal } = useScheduleModal();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -158,14 +160,12 @@ export default function Testimonials() {
             </div>
             
             <div className="pt-4 text-center lg:text-left">
-               <a 
-                 href="https://calendar.app.google/xgsHGme9DoV1DZ2L6" 
-                 target="_blank" 
-                 rel="noreferrer" 
-                 className="btn-primary w-full sm:w-auto shadow-[0_0_20px_rgba(249,168,37,0.2)] inline-block text-center"
+               <button 
+                 onClick={openScheduleModal}
+                 className="btn-primary w-full sm:w-auto shadow-[0_0_20px_rgba(249,168,37,0.2)] inline-block text-center cursor-pointer"
                >
                   Venha conhecer pessoalmente. Agende sua visita! →
-               </a>
+               </button>
             </div>
           </motion.div>
         </div>

@@ -4,20 +4,16 @@ import { motion } from 'motion/react';
 
 export default function Enrollment() {
   const [responsavel, setResponsavel] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [aluno, setAluno] = useState('');
   const [serie, setSerie] = useState('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!responsavel || !whatsapp || !aluno || !serie) {
+    if (!responsavel || !serie) {
       return;
     }
     const formattedMessage = `Olá! Gostaria de mais informações sobre as matrículas 2027.
 
 *Nome do Responsável:* ${responsavel}
-*WhatsApp:* ${whatsapp}
-*Nome do Aluno(a):* ${aluno}
 *Série desejada:* ${serie}`;
 
     const encodedText = encodeURIComponent(formattedMessage);
@@ -105,47 +101,32 @@ export default function Enrollment() {
                     value={responsavel}
                     onChange={(e) => setResponsavel(e.target.value)}
                     placeholder="Como devemos chamar você?" 
-                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" 
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">WhatsApp *</label>
-                  <input 
-                    type="tel" 
-                    required
-                    value={whatsapp}
-                    onChange={(e) => setWhatsapp(e.target.value)}
-                    placeholder="(85) 90000-0000" 
-                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" 
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Nome do Aluno(a) *</label>
-                  <input 
-                    type="text" 
-                    required
-                    value={aluno}
-                    onChange={(e) => setAluno(e.target.value)}
-                    placeholder="Nome da criança" 
-                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50" 
+                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50 font-medium" 
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-kennedy-blue-dark mb-2 ml-1">Série desejada *</label>
-                  <select 
-                    required
-                    value={serie}
-                    onChange={(e) => setSerie(e.target.value)}
-                    className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50 appearance-none text-kennedy-gray-dark"
-                  >
-                    <option value="" disabled>Selecione a série desejada</option>
-                    <option value="Educação Infantil">Educação Infantil</option>
-                    <option value="1º ao 5º Ano (Ensino Fundamental I)">1º ao 5º Ano (Ensino Fundamental I)</option>
-                    <option value="6º ao 9º Ano (Ensino Fundamental II)">6º ao 9º Ano (Ensino Fundamental II)</option>
-                    <option value="Tempo Integral">Tempo Integral</option>
-                  </select>
+                  <div className="relative">
+                    <select 
+                      required
+                      value={serie}
+                      onChange={(e) => setSerie(e.target.value)}
+                      className="w-full px-5 py-4 border border-kennedy-gray-medium/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-kennedy-blue-primary focus:border-transparent transition-all bg-kennedy-gray-light/50 appearance-none text-kennedy-gray-dark font-medium cursor-pointer"
+                    >
+                      <option value="" disabled>Selecione a série desejada</option>
+                      <option value="Educação Infantil">Educação Infantil</option>
+                      <option value="1º ao 5º Ano (Ensino Fundamental I)">1º ao 5º Ano (Ensino Fundamental I)</option>
+                      <option value="6º ao 9º Ano (Ensino Fundamental II)">6º ao 9º Ano (Ensino Fundamental II)</option>
+                      <option value="Tempo Integral">Tempo Integral</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-kennedy-gray-dark">
+                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-                <button type="submit" className="w-full btn-primary !rounded-2xl !py-5 mt-4">
+                <button type="submit" className="w-full btn-primary !rounded-2xl !py-5 mt-4 text-base font-bold shadow-lg shadow-kennedy-blue-primary/20">
                   Enviar Solicitação
                 </button>
               </form>
