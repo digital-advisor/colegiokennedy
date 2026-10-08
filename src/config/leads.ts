@@ -1,9 +1,7 @@
 // Configuração para envio de leads para o Google Sheets via Apps Script Web App
-// Para ativar, basta colar aqui a URL gerada ao implantar o script no Google Sheets
-// Exemplo: "https://script.google.com/macros/s/AKfycbx.../exec"
 export const GOOGLE_SHEETS_WEBAPP_URL: string = 
   ((import.meta as any).env?.VITE_GOOGLE_SHEETS_WEBAPP_URL as string) || 
-  "";
+  "https://script.google.com/macros/s/AKfycbwsi0AXx1oInGMB7C9HfF6E4rvg1ZIADdqlehqw4owPw3JLfEQ2hbKjHNAH54GbB_ClnA/exec";
 
 export interface SendLeadParams {
   tipo: 'agendamento' | 'whatsapp';
@@ -14,9 +12,12 @@ export interface SendLeadParams {
 }
 
 export function sendLeadToGoogleSheets(params: SendLeadParams) {
-  if (!GOOGLE_SHEETS_WEBAPP_URL) return;
+  if (!GOOGLE_SHEETS_WEBAPP_URL) {
+    console.warn('⚠️ [Leads] URL do Google Apps Script ainda não configurada.');
+    return;
+  }
   try {
-    const payload = JSON.stringify({
+    const paramsMap = new URLSearchParams({
       tipo: params.tipo,
       nome: params.nome || '',
       whatsapp: params.whatsapp || '',
@@ -29,10 +30,11 @@ export function sendLeadToGoogleSheets(params: SendLeadParams) {
     fetch(GOOGLE_SHEETS_WEBAPP_URL, {
       method: 'POST',
       mode: 'no-cors',
+      keepalive: true,
       headers: {
-        'Content-Type': 'text/plain;charset=utf-8',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
       },
-      body: payload,
+      body: paramsMap.toString(),
     }).catch((err) => {
       console.warn('Erro ao enviar evento para a planilha:', err);
     });
