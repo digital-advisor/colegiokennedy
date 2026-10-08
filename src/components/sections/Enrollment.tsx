@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Target, CheckCircle, ShieldCheck } from 'lucide-react';
 import { motion } from 'motion/react';
+import { sendLeadToGoogleSheets } from '../../config/leads';
 
 export default function Enrollment() {
   const [responsavel, setResponsavel] = useState('');
@@ -11,6 +12,34 @@ export default function Enrollment() {
     if (!responsavel || !serie) {
       return;
     }
+
+    // Registra a conversão na planilha Google Sheets (Aba: Conversões WPP)
+    sendLeadToGoogleSheets({
+      tipo: 'whatsapp',
+      nome: responsavel.trim(),
+      serie: serie.trim(),
+      origem: 'Formulário Pré-matrícula',
+    });
+
+    // Dispara evento de conversão no GTM e Meta Pixel
+    if (typeof window !== 'undefined') {
+      const win = window as any;
+      win.dataLayer = win.dataLayer || [];
+      win.dataLayer.push({
+        event: 'conversao_whatsapp_matricula',
+        event_name: 'generate_lead',
+        lead_name: responsavel.trim(),
+        lead_serie: serie.trim(),
+        origem: 'Formulário Pré-matrícula',
+      });
+      if (typeof win.fbq === 'function') {
+        win.fbq('track', 'Lead', {
+          content_name: 'Pré-matrícula',
+          content_category: serie.trim(),
+        });
+      }
+    }
+
     const formattedMessage = `Olá! Gostaria de mais informações sobre as matrículas 2027.
 
 *Nome do Responsável:* ${responsavel}

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Calendar, MessageSquare } from 'lucide-react';
 import { useScheduleModal } from '../../context/ScheduleModalContext';
+import { sendLeadToGoogleSheets } from '../../config/leads';
 
 export default function Hero() {
   const { openScheduleModal } = useScheduleModal();
@@ -76,6 +77,7 @@ export default function Hero() {
               href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vim%20do%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%20e%20vagas." 
               target="_blank" 
               rel="noopener noreferrer" 
+              onClick={() => sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Hero - Fazer Matrícula' })}
               className="btn-outline group inline-flex items-center"
             >
               <MessageSquare className="mr-2 w-5 h-5 group-hover:-rotate-12 transition-transform" />

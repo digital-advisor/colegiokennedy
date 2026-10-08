@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, Instagram, Facebook, Youtube } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { sendLeadToGoogleSheets } from '../../config/leads';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,13 +64,14 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center space-x-4">
-          <a href="#" className={`font-semibold hover:text-kennedy-gold transition-colors ${isScrolled ? 'text-kennedy-blue-primary' : 'text-white'}`}>
+          <a href="#familias" className={`font-semibold hover:text-kennedy-gold transition-colors ${isScrolled ? 'text-kennedy-blue-primary' : 'text-white'}`}>
             Área do Aluno
           </a>
           <a 
             href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vim%20do%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%20e%20vagas." 
             target="_blank" 
             rel="noopener noreferrer" 
+            onClick={() => sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Menu Superior - Matricule-se' })}
             className="btn-primary py-2.5 px-6 text-sm"
           >
             Matricule-se
@@ -103,11 +105,21 @@ export default function Header() {
               <MobileNavLink href="#localizacao" onClick={() => setIsMobileMenuOpen(false)}>Localização</MobileNavLink>
               
               <div className="mt-8 flex flex-col items-center space-y-4 w-full px-8">
-                <a href="#" className="w-full text-center py-3 text-white border border-white/30 rounded-full font-semibold">Área do Aluno</a>
+                <a 
+                  href="#familias" 
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                  className="w-full text-center py-3 text-white border border-white/30 rounded-full font-semibold"
+                >
+                  Área do Aluno
+                </a>
                 <a 
                   href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vim%20do%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%20e%20vagas." 
                   target="_blank" 
                   rel="noopener noreferrer" 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Menu Mobile - Matricule-se' });
+                  }}
                   className="w-full text-center py-3 bg-kennedy-gold text-kennedy-blue-dark rounded-full font-bold"
                 >
                   Matricule-se

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X } from 'lucide-react';
+import { sendLeadToGoogleSheets } from '../../config/leads';
 
 export default function FloatingElements() {
   const [showWhatsApp, setShowWhatsApp] = useState(false);
@@ -68,9 +69,10 @@ export default function FloatingElements() {
             </AnimatePresence>
 
             <a 
-              href="https://wa.me/message/26HLQ3X4G2EJG1" 
+              href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={() => sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Botão Flutuante WhatsApp' })}
               className="relative group block"
             >
               {/* Pulse effect */}
