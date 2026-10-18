@@ -3,6 +3,7 @@ import { X, Calendar, ExternalLink, Loader2, Phone, MessageCircle, ArrowRight, U
 import { motion, AnimatePresence } from 'motion/react';
 import { useScheduleModal } from '../../context/ScheduleModalContext';
 import { sendLeadToGoogleSheets } from '../../config/leads';
+import { trackMetaConversion } from '../../services/metaTracking';
 
 export default function ScheduleModal() {
   const { isOpen, closeScheduleModal } = useScheduleModal();
@@ -52,15 +53,17 @@ export default function ScheduleModal() {
         lead_name: name,
         lead_phone: phone,
       });
-
-      // Disparar evento para o Meta Ads Pixel (se inicializado via GTM ou script)
-      if (typeof win.fbq === 'function') {
-        win.fbq('track', 'Lead', {
-          content_name: 'Agendamento de Visita',
-          content_category: 'Visita Presencial',
-        });
-      }
     }
+
+    // Disparar evento de conversão para a Meta Ads (Pixel + API de Conversões CAPI com SHA-256)
+    trackMetaConversion({
+      eventName: 'Lead',
+      contentName: 'Agendamento de Visita',
+      contentCategory: 'Visita Presencial',
+      name: name.trim(),
+      phone: phone.trim(),
+      origem: 'Pop-up Agendamento de Visita',
+    });
 
     // Enviar dados para a planilha Google Sheets via Apps Script Web App
     sendLeadToGoogleSheets({
@@ -267,7 +270,14 @@ export default function ScheduleModal() {
                       href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vim%20do%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20agendar%20uma%20visita."
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Pop-up Agendamento - Rodapé WhatsApp' })}
+                      onClick={() => {
+                        trackMetaConversion({
+                          eventName: 'Lead',
+                          contentName: 'Clique WhatsApp Pop-up Agendamento',
+                          origem: 'Pop-up Agendamento - Rodapé WhatsApp',
+                        });
+                        sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Pop-up Agendamento - Rodapé WhatsApp' });
+                      }}
                       className="inline-flex items-center text-kennedy-blue-primary hover:text-kennedy-gold font-bold transition-colors"
                     >
                       <MessageCircle className="w-3.5 h-3.5 mr-1" />

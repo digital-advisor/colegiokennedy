@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, Instagram, Facebook, Youtube } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { sendLeadToGoogleSheets } from '../../config/leads';
+import { trackMetaConversion } from '../../services/metaTracking';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,7 +72,14 @@ export default function Header() {
             href="https://api.whatsapp.com/send?phone=558596505001&text=Ol%C3%A1!%20Vim%20do%20site%20do%20Col%C3%A9gio%20Kennedy%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%20e%20vagas." 
             target="_blank" 
             rel="noopener noreferrer" 
-            onClick={() => sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Menu Superior - Matricule-se' })}
+            onClick={() => {
+              trackMetaConversion({
+                eventName: 'Lead',
+                contentName: 'Clique WhatsApp Menu Superior',
+                origem: 'Menu Superior - Matricule-se',
+              });
+              sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Menu Superior - Matricule-se' });
+            }}
             className="btn-primary py-2.5 px-6 text-sm"
           >
             Matricule-se
@@ -118,6 +126,11 @@ export default function Header() {
                   rel="noopener noreferrer" 
                   onClick={() => {
                     setIsMobileMenuOpen(false);
+                    trackMetaConversion({
+                      eventName: 'Lead',
+                      contentName: 'Clique WhatsApp Menu Mobile',
+                      origem: 'Menu Mobile - Matricule-se',
+                    });
                     sendLeadToGoogleSheets({ tipo: 'whatsapp', origem: 'Menu Mobile - Matricule-se' });
                   }}
                   className="w-full text-center py-3 bg-kennedy-gold text-kennedy-blue-dark rounded-full font-bold"
